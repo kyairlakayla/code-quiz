@@ -9,22 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-   <div class="start-page">
-       <h2>This quiz will test your coding knowledge!</h2>
-       <button>Start Quiz</button>
+   <div id="start-page" class="start-page">
+       <h2>This quiz will test your coding knowledge.</h2>
+       <p>Careful! Time will be deducted for incorrect responses!</p>
+       <button id="start-btn" onclick="startQuiz()">Start Quiz</button>
     </div>
 
     <!-- Quiz box -->
-    <div class="quiz-start">
+    <div id="quiz-start" class="quiz-start">
         <header>
-            <div class="timer">
-                <div id="timer-text">Remaining Time: </div>
+            <div id="timer" class="timer">
+                <div id="timer-text" class="timer-text">Remaining Time: </div>
             </div>
         </header>
         <section>
-        <div class="questions">
+        <div id="questions" class="questions">
             <!-- insert questions from Javascript -->
-            <p>Questions placeholder</p>
+            <p id="question-text"></p>
         </div>
         <div class="answer-options">
             <button id="a" onclick="checkAnswer('a')">A</button>
@@ -37,12 +38,12 @@
     </div>
     
     <!-- Quiz results box -->
-    <div class="results-box">
-        <div class="completed">Great job! You completed the quiz!</div>
-        <div class="score">
+    <div id="results-box">
+        <div id="completed">Great job! You completed the quiz!</div>
+        <div id="score">
             <!-- insert score result from Javascript -->
         </div>
-        <div class="buttons">
+        <div id="buttons">
             <button class="restart">Replay Quiz</button>
             <button class="quit">Exit Quiz</button>
         </div>
