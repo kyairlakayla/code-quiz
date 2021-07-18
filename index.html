@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
+   <div id="start-page">
+       <h2>This quiz will test your coding knowledge!</h2>
+       <button>Start Quiz</button>
+    </div>
+
+    <!-- Quiz box -->
+    <div class="quiz-start">
+        <header>
+            <div class="timer">
+                <div id="timer-text">Remaining Time</div>
+                <div id="timer-sec">35</div>
+            </div>
+        </header>
+        <section>
+        <div class="questions">
+            <!-- insert questions from Javascript -->
+        </div>
+        <div class="answers">
+            <!-- insert answer options from Javascript -->
+        </div>
+        </section>
+        <!-- Quiz box footer -->
+        <footer>
+            <div class="question-count">
+            <!-- insert question count from Javascript -->
+            </div>
+            <button id="next-btn">Next Question</button>
+        </footer>
+    </div>
     
+    <!-- Quiz results box -->
+    <div class="results-box">
+        <div class="completed">Great job! You completed the quiz!</div>
+        <div class="score">
+            <!-- insert score result from Javascript -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Exit Quiz</button>
+        </div>
+    </div>
+
+    <script src="./assets/questions.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 </html>
