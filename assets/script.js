@@ -153,10 +153,10 @@ saveScore.addEventListener("click", function highscore(){
         return false;
     }else{
         var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
-        var currentUser = userName.value.trim();
+        var currentUser = userName.value;
         var currentHighscore = {
-            name: currentUser,
-            score: score
+            currentUser,
+            score
         };
 
         savedHighscores.push(currentHighscore);
