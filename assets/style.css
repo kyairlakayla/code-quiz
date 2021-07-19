@@ -44,3 +44,9 @@ body {
     text-align: left;
     margin-bottom: 20px;
 }
+
+/* Quiz end */
+.score {
+    color: red;
+    margin-bottom: 20px;
+}

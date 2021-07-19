@@ -71,7 +71,7 @@ var quizQuestions = [{
 
 var finalQuestionIndex = quizQuestions.length;
 var currentQuestionIndex = 0;
-var timeLeft = 76;
+var timeLeft = 75;
 var timerInterval;
 var score = 0;
 var correct;
@@ -90,7 +90,7 @@ function startQuiz() {
     resultBox.style.display = "none";
     generateQuizQuestions();
 
-// Timer 
+// Timer
     timerInterval = setInterval(function() {
         timeLeft--; 
         quizTimer.textContent = "Remaining Time: " + timeLeft;
@@ -120,7 +120,7 @@ function generateQuizQuestions() {
 function checkAnswer(answer) {
     correct = quizQuestions[currentQuestionIndex].correctAnswer;
         if (answer === correct && currentQuestionIndex !== finalQuestionIndex) {
-            score++;
+            score += 5;
             alert('Correct!'); 
             currentQuestionIndex++;
             generateQuizQuestions();
@@ -132,4 +132,13 @@ function checkAnswer(answer) {
             generateQuizQuestions();
         }
 
+}
+
+// Function to show scores
+function showScore() {
+    startQuizDiv.style.display = "none";
+    quizBody.style.display = "none";
+    resultBox.style.display = "block";
+    clearInterval(timerInterval);
+    finalScore.innerHTML = "Your score is " + score; 
 }
