@@ -15,6 +15,8 @@ var buttonC = document.getElementById("c");
 var buttonD = document.getElementById("d");
 var buttonRestart = document.getElementById("restart");
 var buttonQuit = document.getElementById("quit");
+var saveScore = document.getElementById("saveScore");
+var userName = document.getElementById("user-name");
 
 // Quiz questions object array
 var quizQuestions = [{
@@ -142,3 +144,48 @@ function showScore() {
     clearInterval(timerInterval);
     finalScore.innerHTML = "Your score is " + score; 
 }
+
+// Save user input and score
+saveScore.addEventListener("click", function highscore(){
+     
+    if(userName.value === "") {
+        alert("Please insert your name to save your score!");
+        return false;
+    }else{
+        var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+        var currentUser = userName.value.trim();
+        var currentHighscore = {
+            name: currentUser,
+            score: score
+        };
+
+        savedHighscores.push(currentHighscore);
+        localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
+        generateHighscores();
+    }
+}); 
+
+function generateHighscores(){
+    userName.innerHTML = "";
+    finalScore.innerHTML = "";
+    var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
+    for (i=0; i<highscores.length; i++){
+        var newNameSpan = document.createElement("li");
+        var newScoreSpan = document.createElement("li");
+        newNameSpan.textContent = highscores[i].name;
+        newScoreSpan.textContent = highscores[i].score;
+        userName.appendChild(newNameSpan);
+        finalScore.appendChild(newScoreSpan);
+    }
+}
+
+// Resets quiz and local storage if user plays again
+buttonRestart.addEventListener("click", function playAgain() {
+    startQuizDiv.style.display = "block";
+    quizBody.style.display = "none";
+    resultBox.style.display = "none";
+    timeLeft= 75;
+    score = 0;
+    currentQuestionIndex = 0;
+    window.localStorage.clear();
+}); 

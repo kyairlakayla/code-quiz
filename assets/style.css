@@ -50,3 +50,15 @@ body {
     color: red;
     margin-bottom: 20px;
 }
+
+.name {
+    margin-bottom: 20px;
+}
+
+.restart {
+    padding: 5px;
+    margin-right: 10px;
+}
+.quit {
+    padding: 5px;
+}
