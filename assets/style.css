@@ -60,3 +60,7 @@ body {
 .quit {
     padding: 5px;
 }
+
+.score li {
+    list-style: none;
+}

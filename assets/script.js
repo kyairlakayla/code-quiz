@@ -171,11 +171,8 @@ function generateHighscores(){
     var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
     for (i=0; i<highscores.length; i++){
         var newNameSpan = document.createElement("li");
-        var newScoreSpan = document.createElement("li");
-        newNameSpan.textContent = highscores[i].name;
-        newScoreSpan.textContent = highscores[i].score;
-        userName.appendChild(newNameSpan);
-        finalScore.appendChild(newScoreSpan);
+        newNameSpan.textContent = highscores[i].currentUser + highscores[i].score;
+        finalScore.appendChild(newNameSpan);
     }
 }
 
